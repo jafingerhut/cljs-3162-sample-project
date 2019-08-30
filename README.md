@@ -74,7 +74,9 @@ Ran 2 tests containing 2 assertions.
 0 failures, 1 errors.
 ```
 
-ClojureScript 1.10.520 behavior:
+ClojureScript 1.10.520 behavior with a Node.js runtime (version
+10.16.0 on macOS 10.13.6, but likely the result is the same for many
+other versions of Node.js):
 
 ```bash
 $ clj -A:cljs:test:cljs-node-test
