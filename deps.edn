@@ -1,0 +1,19 @@
+{:paths ["resources" "src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+ :jvm-opts ["-XX:-OmitStackTraceInFastThrow"]
+ :aliases
+ {:test {:extra-paths ["test"]}
+  :cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.520"}}}
+
+  :clj-runner
+  {:extra-deps {com.cognitect/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner"
+                 :sha "76568540e7f40268ad2b646110f237a60295fa3c"}}
+   :main-opts ["-m" "cognitect.test-runner"
+               "-d" "test"]}
+
+  :cljs-node-test
+  {:main-opts ["-m" "cljs.main"
+               "-re" "node"
+               "-e" "(require,'[clojure.test,:as,t],'cljs-3162-sample-project.another-test),(t/run-tests,'cljs-3162-sample-project.another-test)"]}
+  }}
